@@ -69,7 +69,7 @@ section{position:relative}
 
 /* цифры */
 .stats{background:var(--paper);border-top:1px solid var(--line)}
-.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;padding-block:44px}
+.stats .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:40px 32px;padding-block:44px}
 .stat{position:relative;padding-top:17px;min-width:0}
 .stat b{display:block;font:700 clamp(54px,6vw,84px)/1.05 var(--display)}
 .stat span{display:block;font-size:15px;color:var(--muted);margin-top:6px}
@@ -143,6 +143,11 @@ section{position:relative}
 .cases{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:56px}
 .case{background:var(--card);border-radius:20px;padding:30px;display:flex;flex-direction:column;gap:16px;box-shadow:0 10px 32px rgba(17,17,19,.07)}
 .case h3{font:700 40px/1.05 var(--display)}
+.cdesc{font:500 17px/1.4 var(--sans);color:var(--ink)}
+.case .cl{display:flex;flex-direction:column;gap:12px}
+.case.wide{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:24px 48px;align-items:center}
+.case.wide dl{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px 32px}
+.figs.two{grid-template-columns:repeat(2,minmax(0,1fr))}
 .figs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding-block:16px}
 .fig b{display:block;font:700 clamp(44px,4.4vw,60px)/1 var(--display)}
 .fig span{display:block;font-size:13.5px;line-height:1.35;color:var(--muted);margin-top:6px}
@@ -245,6 +250,11 @@ footer .brand{color:var(--on-dark)}
 footer .legal{max-width:100ch}
 .sticky{position:fixed;left:0;right:0;bottom:0;z-index:55;background:rgba(243,243,240,.96);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));display:none;align-items:center;justify-content:space-between;gap:14px}
 .sticky b{font:700 30px/1 var(--display)}
+.was{font-weight:500;color:var(--muted);text-decoration:line-through;text-decoration-thickness:.07em;margin-right:.3em}
+.price-chip .was{font-size:.7em}
+.pricecard .big{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 .22em}
+.pricecard .was{font-size:.4em;color:var(--on-dark-muted);margin-right:0}
+.sticky .was{font-size:.6em;margin-right:.25em}
 .sticky .btn{min-height:48px;padding:0 20px;font-size:16px}
 
 
@@ -426,12 +436,13 @@ main{overflow-x:clip}
   .next{grid-template-columns:minmax(0,1fr)}
   .docs-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .portrait{aspect-ratio:4/4}
+  .case.wide,.case.wide dl{grid-template-columns:minmax(0,1fr)}
   .sticky.on{display:flex}
 }
 @media (max-width:620px){
   .venues .wrap{flex-wrap:wrap;gap:8px 24px}
   .mq{flex-basis:100%}
-  .deliver,.fit .cols,.cases,.shots,.two,.figs{grid-template-columns:minmax(0,1fr)}
+  .deliver,.fit .cols,.cases,.shots,.two,.figs,.figs.two{grid-template-columns:minmax(0,1fr)}
   .steps{grid-template-columns:minmax(0,1fr)}
   .ask{padding:22px}
   .ask .q{font-size:48px}
@@ -471,18 +482,20 @@ main{overflow-x:clip}
         <a class="btn" href="#zapis" id="heroCta">Записаться на разбор</a>
         <a class="btn ghost" href="#test">Пройти тест за 3 минуты</a>
       </div>
-      <div class="price-chip"><b>389&nbsp;$</b><span>90 минут + письменный план</span></div>
-      <p class="note">Перед оплатой короткий бесплатный созвон на 10–15 минут. Если разбор вам не подходит, скажем об этом сразу.</p>
+      <div class="price-chip"><b><s class="was">999&nbsp;$</s>389&nbsp;$</b><span>90 минут + письменный план</span></div>
+      <p class="note">Перед оплатой короткий бесплатный созвон на 5–10 минут. Если разбор вам не подходит, скажем об этом сразу.</p>
     </div>
   </div>
 </section>
 
 <section class="stats" aria-label="Опыт в цифрах">
   <div class="wrap">
+    <div class="stat"><b>1 млрд ₽</b><span>ежегодный коммерческий объём бизнес-направления, запущенного с нуля</span></div>
+    <div class="stat"><b>4,4 трлн ₽</b><span>совокупная годовая выручка компаний-клиентов</span></div>
+    <div class="stat"><b>500+</b><span>интервью с собственниками бизнеса и топ-менеджерами для разработки стратегических решений развития компаний на рынке России</span></div>
+    <div class="stat"><b>15+</b><span>выступлений в Госдуме РФ, МТПП, «Сколково», на федеральном ТВ и международных форумах</span></div>
+    <div class="stat"><b>ТОП-300</b><span>включена в рейтинг лучших экспертов PRO Bono в сфере защиты прав предпринимателей</span></div>
     <div class="stat"><b>3</b><span>новых экспортных направления: ОАЭ, Япония, США</span></div>
-    <div class="stat"><b>100+</b><span>млн ₽ в месяц: объём направления, запущенного с нуля</span></div>
-    <div class="stat"><b>60+</b><span>стратегических и маркетинговых исследований</span></div>
-    <div class="stat"><b>500+</b><span>интервью с клиентами и представителями бизнеса</span></div>
   </div>
 </section>
 
@@ -502,11 +515,14 @@ main{overflow-x:clip}
       <a class="btn ghost" href="#zapis" style="align-self:flex-start">Обсудить мою ситуацию</a>
     </div>
     <div class="cards">
-      <article class="ask"><span class="q" aria-hidden="true">“</span><h3>Хочу продавать в России, но не знаю, с какой модели начать</h3><p>Своё юрлицо, дистрибьютор, представительство или франшиза. У каждого пути свои деньги, сроки и риски.</p></article>
+      <article class="ask"><span class="q" aria-hidden="true">“</span><h3>С чего начать выход на рынок России</h3><p>Как открыть собственную компанию, найти дистрибьютора или работать через местного партнёра. Как выгоднее, быстрее и безопаснее для бизнеса.</p></article>
+      <article class="ask"><span class="q" aria-hidden="true">“</span><h3>Будет ли мой продукт востребован в России?</h3><p>Есть ли спрос, кто конкуренты, какие цены приемлемы для клиентов и есть ли перспективы занять свою долю рынка.</p></article>
+      <article class="ask"><span class="q" aria-hidden="true">“</span><h3>Нужны первые клиенты и крупные заказчики</h3><p>Где искать покупателей, как выйти на крупные российские компании и ЛПР, с чего начать сотрудничество.</p></article>
+      <article class="ask"><span class="q" aria-hidden="true">“</span><h3>Как работает маркетинг в России: что здесь вообще работает</h3><p>Какие рекламные площадки и каналы продвижения эффективны, как в России выбирают товары и услуги и во что вкладывать.</p></article>
+      <article class="ask"><span class="q" aria-hidden="true">“</span><h3>Нужны надёжные партнёры в России</h3><p>Где найти дистрибьюторов, поставщиков и деловых партнёров, как проверить их надёжность и выстроить взаимовыгодное сотрудничество.</p></article>
+      <article class="ask"><span class="q" aria-hidden="true">“</span><h3>Сколько денег потребуется на вход и когда они окупятся</h3><p>Какие расходы предстоят, сколько можно заработать, когда ожидать первые продажи и как оценить риски ещё до вложения средств.</p></article>
       <article class="ask"><span class="q" aria-hidden="true">“</span><h3>Не понимаю, как получать деньги</h3><p>Банки усиливают проверки, переводы между странами могут задерживаться. Нужны основной и запасной маршруты расчётов.</p></article>
-      <article class="ask"><span class="q" aria-hidden="true">“</span><h3>Боюсь ошибиться с маркировкой, сертификацией и налогами</h3><p>Для ряда товаров нужна маркировка, а иностранный бизнес не всегда может зарегистрироваться в системе напрямую.</p></article>
-      <article class="ask"><span class="q" aria-hidden="true">“</span><h3>Нужно просчитать маржу в России</h3><p>Пошлины, логистика и НДС определяют экономику товара. Посчитать её лучше до входа.</p></article>
-      <article class="ask"><span class="q" aria-hidden="true">“</span><h3>Нужны партнёры, и непонятно, как их проверять</h3><p>Дистрибьюторы, франчайзи, поставщики: где искать, на что смотреть и как защитить себя договором.</p></article>    </div>
+      <article class="ask"><span class="q" aria-hidden="true">“</span><h3>Боюсь ошибиться с маркировкой, сертификацией и налогами</h3><p>Для ряда товаров нужна маркировка, а иностранный бизнес не всегда может зарегистрироваться в системе напрямую.</p></article>    </div>
   </div>
 </section>
 
@@ -522,15 +538,15 @@ main{overflow-x:clip}
       <h2 class="h2">Что вы получите</h2>
     </div>
     <div class="deliver">
-      <article class="dv"><h3>Оценка рынка</h3><p>На какой сегмент и регион заходить в первую очередь, по какой цене и какие конкуренты есть.</p></article>
-      <article class="dv"><h3>Модель входа</h3><p>Какая схема подходит вашему бизнесу и бюджету, и почему именно она.</p></article>
+      <article class="dv"><h3>Оценка рынка</h3><p>Есть ли спрос, кто конкуренты и какие цены приемлемы для клиентов. На какой сегмент и регион заходить в первую очередь.</p></article>
+      <article class="dv"><h3>Модель входа</h3><p>Своя компания, дистрибьютор или местный партнёр: какая схема выгоднее, быстрее и безопаснее для вашего бизнеса и бюджета, и почему именно она.</p></article>
       <article class="dv"><h3>Карта барьеров</h3><p>Какие требования и условия нужно закрыть для входа. Проходим по восьми зонам.</p>
         <div class="zones"><span>юрформа</span><span>налоги и НДС</span><span>платежи</span><span>маркировка и сертификация</span><span>данные клиентов</span><span>товарный знак</span><span>каналы продаж</span><span>реклама</span></div></article>
       <article class="dv"><h3>План на 90 дней</h3><p>Письменный план на 1–2 страницы: какие шаги, в каком порядке и с какими решениями.</p></article>
     </div>
     <aside class="pricecard" aria-label="Стоимость">
       <p class="eyebrow" style="color:var(--on-dark-muted)">Стоимость</p>
-      <div class="big">389&nbsp;$</div>
+      <div class="big"><s class="was">999&nbsp;$</s>389&nbsp;$</div>
       <p class="sub">Один разбор, один бизнес, одна страна выхода.</p>
       <ul>
         <li>Видеовстреча 90 минут с Марией</li>
@@ -539,7 +555,7 @@ main{overflow-x:clip}
         <li>Возможность продолжить сотрудничество по ведению бизнеса</li>
       </ul>
       <a class="btn light block" href="#zapis">Записаться на разбор</a>
-      <small>Сначала бесплатный созвон на 10–15 минут, оплата после него.</small>
+      <small>Сначала бесплатный созвон на 5–10 минут, оплата после него.</small>
     </aside>
   </div>
 </section>
@@ -550,7 +566,7 @@ main{overflow-x:clip}
     <h2 class="h2" style="margin-top:14px">Четыре шага</h2>
     <div class="steps">
       <div class="step"><span class="n">1</span><h3>Заявка</h3><p>Пять вопросов, две минуты. Страна, чем занимаетесь, что хотите продавать в России.</p></div>
-      <div class="step"><span class="n">2</span><h3>Короткий созвон</h3><p>10–15 минут, бесплатно. Проверяем, подходит ли вам разбор, и договариваемся о времени.</p></div>
+      <div class="step"><span class="n">2</span><h3>Короткий созвон</h3><p>5–10 минут, бесплатно. Проверяем, подходит ли вам разбор, и договариваемся о времени.</p></div>
       <div class="step"><span class="n">3</span><h3>Оплата и анкета</h3><p>Оплачиваете разбор и заполняете анкету: продукт, цены, бюджет, текущие шаги.</p></div>
       <div class="step"><span class="n">4</span><h3>Встреча и план</h3><p>90 минут по видео. После встречи получаете письменный план на 1–2 страницы.</p></div>
     </div>
@@ -594,10 +610,11 @@ main{overflow-x:clip}
         <h2>Мария Мартыхина</h2>
         <p class="lead" style="color:var(--ink)">Стратегический эдвайзер, эксперт по международному развитию бизнеса. Более 7 лет в управлении, запуске новых направлений и международной экспансии.</p>
         <ul class="facts">
+          <li><span>Руководила бизнесом с миллиардным коммерческим объёмом, развивала корпоративные партнёрства и деловые связи с крупным бизнесом и государственными структурами</span></li>
           <li><span>Запускала экспортные направления в ОАЭ, Японии и США, прорабатывала Доминикану, Африку и Латинскую Америку</span></li>
-          <li><span>Сопровождала выход международного бренда Kungfu Malatang на российский рынок</span></li>
-          <li><span>Провела 60+ исследований и 500+ интервью для компаний из 10+ отраслей, среди заказчиков РЖД и МТС</span></li>
-          <li><span>Юрист (МГЮА), стратегический менеджмент (МГИМО). Член научно-экспертного совета Ассоциации экспортного контроля России и Общественной палаты стран ЕАЭС</span></li>
+          <li><span>Сопровождала выход международной сети ресторанов Kungfu Malatang на российский рынок: первый ресторан бренда открылся в России</span></li>
+          <li><span>Провела 60+ стратегических исследований и разработала решения по выводу новых продуктов на рынок России для МТС, РЖД и Минтранса</span></li>
+          <li><span>Юрист (МГЮА), стратегический менеджмент (МГИМО). Председатель Экспертного совета ИД «Научная библиотека», член научно-экспертного совета Ассоциации экспортного контроля России и Общественной палаты стран ЕАЭС</span></li>
         </ul>
       </div>
     </div>
@@ -606,24 +623,48 @@ main{overflow-x:clip}
       <article class="case">
         <p class="eyebrow">Кейс · выход на рынок России</p>
         <h3>Kungfu Malatang</h3>
+        <p class="cdesc">Выход международной сети ресторанов на рынок России</p>
+        <div class="figs two">
+          <div class="fig"><b>3 500+</b><span>точек у международной сети ресторанов по миру</span></div>
+          <div class="fig"><b>1</b><span>первый ресторан бренда открылся в России</span></div>
+        </div>
         <dl>
-          <div><dt>Было</dt><dd>Международный бренд, которому нужно масштабироваться на российский рынок</dd></div>
-          <div><dt>Сделали</dt><dd>Разработали логику выхода с франчайзинговой моделью, выстроили работу подрядчиков и упаковку для партнёров</dd></div>
-          <div><dt>Результат</dt><dd>Модель входа в Россию и материалы для переговоров с франчайзи</dd></div>
+          <div><dt>Было</dt><dd>Представители крупной международной ресторанной сети хотели открыть первый ресторан в России, но не понимали, как устроен местный рынок, где искать клиентов и как продвигать бренд</dd></div>
+          <div><dt>Сделали</dt><dd>Изучили рынок и конкурентов, определили способы привлечения гостей, разработали стратегию продвижения и организовали работу подрядчиков</dd></div>
+          <div><dt>Результат</dt><dd>Подготовили понятный план выхода на российский рынок. Первый ресторан бренда открылся в России</dd></div>
         </dl>
       </article>
       <article class="case">
-        <p class="eyebrow">Кейс · новые рынки</p>
+        <p class="eyebrow">Кейс · новое направление</p>
         <h3>ООО «НЭТ КАРС»</h3>
-        <div class="figs">
-          <div class="fig"><b>3</b><span>новых экспортных направления: ОАЭ, Япония, США</span></div>
-          <div class="fig"><b>3</b><span>страны Африки: встречи с представителями правительств</span></div>
-          <div class="fig"><b>100+</b><span>млн ₽ в месяц у направления, запущенного ею в компании</span></div>
+        <p class="cdesc">Запуск B2C-направления с нуля до 100+ млн ₽ в месяц для международной автомобильной компании</p>
+        <div class="figs two">
+          <div class="fig"><b>100+ млн ₽</b><span>ежемесячный коммерческий объём нового направления</span></div>
+          <div class="fig"><b>22</b><span>новых оптовых партнёра за 3 месяца</span></div>
+          <div class="fig"><b>X4</b><span>рост трафика после перестройки системы продвижения</span></div>
+          <div class="fig"><b>70%+</b><span>клиентов приходят через органические каналы, без затрат на платную рекламу</span></div>
         </div>
         <dl>
-          <div><dt>Было</dt><dd>Международная дирекция, которой нужно открыть новые страны</dd></div>
-          <div><dt>Сделали</dt><dd>Составили карту рынков с оценкой потенциала, барьеров входа, конкурентов и партнёров, подобрали модели присутствия</dd></div>
-          <div><dt>Результат</dt><dd>Запущены экспортные направления: Дубай, Япония, США. Проработан запуск в Доминикане</dd></div>
+          <div><dt>Было</dt><dd>Компания развивала международный автомобильный бизнес. Требовалось с нуля создать систему продаж частным клиентам и расширить сеть оптовых партнёров</dd></div>
+          <div><dt>Сделали</dt><dd>Сформировали коммерческую команду, выстроили продажи, маркетинг и клиентское сопровождение, протестировали более 25 каналов привлечения клиентов и усилили B2B-партнёрства</dd></div>
+          <div><dt>Результат</dt><dd>Создано полноценное B2C-направление с регулярным коммерческим объёмом свыше 100 млн ₽ в месяц. Привлечены 22 оптовых партнёра, обеспечившие дополнительный объём продаж</dd></div>
+        </dl>
+      </article>
+      <article class="case wide">
+        <div class="cl">
+          <p class="eyebrow">Кейс · новые клиенты</p>
+          <h3>Международная логистическая компания</h3>
+          <p class="cdesc">Выход на новых якорных заказчиков в России за 1 месяц</p>
+        </div>
+        <div class="figs">
+          <div class="fig"><b>5</b><span>запросов на услуги международной доставки</span></div>
+          <div class="fig"><b>30+</b><span>руководителей компаний заинтересовались сотрудничеством</span></div>
+          <div class="fig"><b>0 ₽</b><span>на рекламу за 1 месяц</span></div>
+        </div>
+        <dl>
+          <div><dt>Было</dt><dd>Полное непонимание, как продвигаться на российском рынке и находить новых клиентов. Компания хотела привлечь новых крупных постоянных заказчиков, наладить деловые связи и получить первые результаты</dd></div>
+          <div><dt>Сделали</dt><dd>За месяц представили компанию на 2 отраслевых выставках, установили контакты с 4 отраслевыми государственными ассоциациями, протестировали более 5 способов поиска и привлечения клиентов без рекламного бюджета. Организовали прямые контакты и встречи с руководителями потенциальных компаний-заказчиков</dd></div>
+          <div><dt>Результат</dt><dd>Получено 5 запросов на услуги международной доставки, более 30 руководителей компаний заинтересовались сотрудничеством. Установлены прямые связи с отраслевыми ассоциациями и потенциальными крупными заказчиками за 1 месяц без расходов на рекламу</dd></div>
         </dl>
       </article>
     </div>
@@ -673,8 +714,8 @@ main{overflow-x:clip}
       <p class="lead">Мы свяжемся с вами в течение часа в Telegram или по телефону и договоримся о коротком созвоне.</p>
       <ol class="mini-steps">
         <li><span>Заявка. Две минуты</span></li>
-        <li><span>Созвон 10–15 минут, бесплатно</span></li>
-        <li><span>Оплата 389&nbsp;$ и анкета</span></li>
+        <li><span>Созвон 5–10 минут, бесплатно</span></li>
+        <li><span>Оплата <s class="was">999&nbsp;$</s>389&nbsp;$ и анкета</span></li>
         <li><span>Встреча 90 минут и письменный план</span></li>
       </ol>
     </div>
@@ -691,7 +732,7 @@ main{overflow-x:clip}
           </select><div class="err" id="eCountry" role="alert"></div></div>
         <div class="f"><label for="fBiz">Чем занимается бизнес</label><input id="fBiz" name="biz" placeholder="Например: производство одежды, 40 человек"><div class="err" id="eBiz" role="alert"></div></div>
         <div class="f"><label for="fGoal">Что хотите продавать в России</label><textarea id="fGoal" name="goal" placeholder="Продукт, цена, где планируете продавать"></textarea></div>
-        <label class="consent"><input type="checkbox" id="fOk"><span>Понимаю, что разбор платный: 389&nbsp;$. Сначала короткий созвон, оплата после него.</span></label>
+        <label class="consent"><input type="checkbox" id="fOk"><span>Понимаю, что разбор платный: <s class="was">999&nbsp;$</s>389&nbsp;$. Сначала короткий созвон, оплата после него.</span></label>
         <div class="err" id="eOk" role="alert" style="font-size:14px;color:#A3231F"></div>
         <button class="btn block" type="submit">Отправить заявку</button>
       </form>
@@ -723,7 +764,7 @@ main{overflow-x:clip}
   </div>
 </footer>
 
-<div class="sticky" id="sticky"><b>389&nbsp;$</b><a class="btn" href="#zapis">Записаться на разбор</a></div>
+<div class="sticky" id="sticky"><b><s class="was">999&nbsp;$</s>389&nbsp;$</b><a class="btn" href="#zapis">Записаться на разбор</a></div>
 
 <div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Документ">
   <button class="lb-x" type="button" id="lbX" aria-label="Закрыть">×</button>
@@ -915,7 +956,7 @@ main{overflow-x:clip}
   /* цифры в блоке «Опыт» и в кейсе считаются от нуля; цену не трогаем */
   function count(el){
     if(reduce)return;
-    var m=el.textContent.trim().match(/^(\d+)(.*)$/);if(!m)return;
+    var m=el.textContent.trim().match(/^(\d+)(?![\d,.]| \d)(.*)$/);if(!m)return;
     var to=+m[1],suf=m[2];
     if(!(to>0))return;
     var dur=1000+Math.min(to,500)*0.9;
