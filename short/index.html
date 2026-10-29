@@ -1,0 +1,589 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow"><title>Разбор выхода на рынок России: короткий вариант</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Extra+Condensed:wght@600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap"><script>document.documentElement.classList.add("js")</script><style>
+:root{--paper:#F3F3F0;--card:#FBFBF9;--ink:#111113;--muted:#5B5C61;--line:#D5D6DA;--cool:#E3E5EB;--dark:#0F0F10;--dark2:#1B1B1D;--on-dark:#F3F3F0;--on-dark-muted:#A9AAAF;--dark-line:#37383C;
+--display:'Sofia Sans Extra Condensed','Oswald',Impact,'Arial Narrow',sans-serif;--serif:Georgia,'Times New Roman',serif;--sans:'Montserrat',system-ui,-apple-system,Arial,sans-serif;--ease:cubic-bezier(.2,.7,.2,1);color-scheme:light}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.55 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4,p,ul,ol,dl,figure{margin:0}
+h1,h2,h3{font-family:var(--display);font-weight:700;text-transform:uppercase;line-height:1.04;letter-spacing:.004em;text-wrap:balance}
+a{color:inherit}
+img{display:block;max-width:100%}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.dark :focus-visible{outline-color:var(--on-dark)}
+.wrap{width:100%;max-width:1160px;margin:0 auto;padding-inline:max(20px,env(safe-area-inset-left,0px))}
+.sec{padding-block:clamp(44px,6vw,76px)}
+.eyebrow{font:600 13px/1.3 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.dark .eyebrow{color:var(--on-dark-muted)}
+.h2{font-size:clamp(40px,5.4vw,68px);margin-top:10px}
+.lead{font-size:clamp(16px,1.5vw,18px);color:var(--muted);max-width:62ch;margin-top:14px}
+/* кнопки */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 28px;border-radius:12px;background:var(--ink);color:var(--paper);font:600 16px/1 var(--sans);text-decoration:none;border:1.5px solid var(--ink);cursor:pointer;transition:background .15s,transform .15s,color .15s}
+.btn:hover{background:#2B2B2F;transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--paper)}
+.btn.light{background:var(--on-dark);color:var(--ink);border-color:var(--on-dark)}
+.btn.light:hover{background:#fff}
+.btn.block{width:100%}
+
+
+.top{position:sticky;top:0;z-index:50;background:rgba(243,243,240,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:60px}
+.brand{font:700 26px/1 var(--display);letter-spacing:.02em;text-transform:uppercase;text-decoration:none;white-space:nowrap}
+.nav{display:flex;gap:24px;font:500 14px/1 var(--sans)}
+.nav a{text-decoration:none;color:var(--muted)}
+.nav a:hover{color:var(--ink)}
+.top .btn{min-height:42px;padding:0 18px;font-size:14px}
+.was{font-weight:500;color:var(--muted);text-decoration:line-through;text-decoration-thickness:.07em;margin-right:.3em}
+
+/* первый экран */
+.hero{position:relative;overflow:hidden;background:var(--paper)}
+.hero-photo{position:absolute;right:0;bottom:0;height:100%;width:auto;max-width:none;filter:grayscale(1) contrast(1.05)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--paper) 0%,var(--paper) 36%,rgba(243,243,240,0) 64%)}
+.hero .wrap{position:relative;z-index:2}
+.hero-in{min-height:540px;padding-block:40px 44px;display:flex;flex-direction:column;justify-content:center;gap:18px;max-width:700px}
+.hero h1{font-size:clamp(56px,8.2vw,112px);line-height:.95}
+.promise{font:400 clamp(19px,2vw,24px)/1.35 var(--serif);max-width:26em;text-wrap:balance}
+.cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:14px 24px}
+.price{display:flex;align-items:baseline;gap:10px;font:600 12px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.price b{font:700 38px/1 var(--display);color:var(--ink);letter-spacing:.02em}
+.price .was{font-size:23px;font-family:var(--display);font-weight:700}
+.trust{font-size:14px;color:var(--muted);max-width:46ch}
+.trust b{color:var(--ink)}
+.note{font-size:14px;color:var(--muted);max-width:46ch}
+.tlink{font:600 15px var(--sans);text-underline-offset:4px}
+
+/* цифры */
+.proof{background:var(--ink);color:var(--on-dark)}
+.proof .wrap{display:grid;grid-template-columns:repeat(5,1fr);gap:20px 28px;padding-block:26px}
+.pf b{display:block;font:700 clamp(32px,3.4vw,46px)/1.05 var(--display)}
+.pf span{display:block;font-size:13px;line-height:1.35;color:var(--on-dark-muted);margin-top:4px}
+
+/* запросы */
+.pains{display:grid;grid-template-columns:repeat(2,1fr);gap:0 44px;margin-top:26px}
+.pain{display:grid;grid-template-columns:24px 1fr;gap:3px 10px;padding:15px 0;border-top:1px solid var(--ink)}
+.pain::before{content:"";width:11px;height:11px;margin-top:7px;background:var(--ink);border-radius:3px}
+.pain h3{font:600 17px/1.3 var(--sans);text-transform:none;letter-spacing:0}
+.pain p{grid-column:2;font-size:14.5px;color:var(--muted)}
+
+/* что получите + цена */
+.get{background:var(--cool)}
+.get .wrap{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:40px;align-items:start}
+.dv-list{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px}
+.dv{background:var(--card);border-radius:16px;padding:20px 22px}
+.dv h3{font-size:27px;margin-bottom:6px}
+.dv p{font-size:15px;color:var(--muted)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0 14px;margin-top:24px}
+.st{padding-top:12px;border-top:2px solid var(--ink)}
+.st b{display:block;font:700 28px/1 var(--display);color:var(--muted)}
+.st h3{font:600 14.5px/1.3 var(--sans);text-transform:none;letter-spacing:0;margin-top:4px}
+.st p{font-size:13px;color:var(--muted);line-height:1.4;margin-top:2px}
+.pricecard{background:var(--dark);color:var(--on-dark);border-radius:22px;padding:28px;display:flex;flex-direction:column;gap:14px;position:sticky;top:84px}
+.pricecard .tag{font:600 12px var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--on-dark-muted)}
+.pricecard .big{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 .22em;font:700 clamp(72px,8vw,100px)/1 var(--display)}
+.pricecard .was{font-size:.4em;color:var(--on-dark-muted);margin-right:0}
+.pricecard ul{list-style:none;padding:14px 0 0;margin:0;border-top:1px solid var(--dark-line);display:flex;flex-direction:column;gap:8px;font-size:15px}
+.pricecard li{display:flex;gap:10px}
+.pricecard li::before{content:"";flex:none;width:7px;height:7px;margin-top:9px;background:var(--on-dark);border-radius:2px}
+.pricecard small{color:var(--on-dark-muted);font-size:13px;line-height:1.45}
+
+/* эксперт */
+.expert .grid{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:44px;align-items:center}
+.portrait{border-radius:22px;overflow:hidden;aspect-ratio:4/5;background:#cfd1d8}
+.portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.who{display:flex;flex-direction:column;gap:14px}
+.who h2{font-size:clamp(44px,5.2vw,68px)}
+.facts{list-style:none;padding:0;display:flex;flex-direction:column;gap:11px}
+.facts li{display:grid;grid-template-columns:auto 1fr;gap:12px;font-size:15.5px}
+.facts li::before{content:"";width:9px;height:9px;margin-top:8px;background:var(--ink);border-radius:2px}
+
+/* кейсы */
+.cases{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:26px}
+.case{background:var(--card);border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:12px;box-shadow:0 8px 26px rgba(17,17,19,.07)}
+.case h3{font-size:28px;line-height:1.08}
+.cdesc{font:500 15px/1.4 var(--sans)}
+.figs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 16px;padding:12px 0;border-block:1px solid var(--line)}
+.fig b{display:block;font:700 34px/1 var(--display)}
+.fig span{display:block;font-size:13px;line-height:1.3;color:var(--muted);margin-top:3px}
+.cres{font-size:15px}
+.case details{margin-top:auto;border-top:1px solid var(--line);padding-top:10px}
+.case summary{cursor:pointer;font:600 14px var(--sans);list-style:none;display:flex;justify-content:space-between;align-items:center}
+.case summary::-webkit-details-marker{display:none}
+.case summary::after{content:"+";font:500 22px/1 var(--sans)}
+.case details[open] summary::after{content:"\2013"}
+.case dl{margin-top:10px;font-size:14px;display:flex;flex-direction:column;gap:9px}
+.case dt{font:600 11px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.case dd{margin:2px 0 0}
+
+/* документы */
+.docs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;margin-top:22px}
+.doc{background:none;border:0;padding:0;cursor:zoom-in}
+.doc .thumb{display:block;border-radius:10px;overflow:hidden;box-shadow:0 8px 24px rgba(17,17,19,.12);background:#fff;aspect-ratio:1400/1981;transition:transform .2s}
+.doc:hover .thumb{transform:translateY(-4px)}
+.doc img{width:100%;height:100%;object-fit:cover}
+.lb{position:fixed;inset:0;z-index:100;background:rgba(15,15,16,.9);display:flex;align-items:center;justify-content:center;padding:20px}
+.lb[hidden]{display:none}
+.lb img{max-height:100%;max-width:min(900px,100%);width:auto;border-radius:8px;background:#fff}
+.lb-x{position:absolute;top:14px;right:14px;width:48px;height:48px;border-radius:50%;border:0;background:var(--on-dark);color:var(--ink);font-size:28px;line-height:1;cursor:pointer}
+
+/* тест */
+/* тест */
+.dark{background:var(--dark);color:var(--on-dark)}
+.test .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:56px;align-items:start}
+.test .side{display:flex;flex-direction:column;gap:22px}
+.test .side .lead{color:var(--on-dark-muted)}
+.test .mini{list-style:none;padding:0;display:flex;flex-direction:column;gap:10px;font-size:17px}
+.test .mini li{display:flex;gap:12px}
+.test .mini li::before{content:"";flex:none;width:8px;height:8px;margin-top:10px;background:var(--on-dark);border-radius:2px}
+.quiz{background:var(--dark2);border-radius:26px;padding:clamp(24px,3.4vw,40px);min-height:470px;display:flex;flex-direction:column;gap:22px}
+.qtop{display:flex;justify-content:space-between;align-items:center;gap:16px;font:500 14px var(--sans);color:var(--on-dark-muted)}
+.bar{height:4px;background:var(--dark-line);border-radius:4px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--on-dark);transition:width .3s}
+.qzone{font:600 13px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--on-dark-muted)}
+.qtext{font:600 clamp(20px,2.2vw,26px)/1.3 var(--sans);min-height:4.1em}
+.opts{display:flex;flex-direction:column;gap:10px}
+.opt{min-height:56px;text-align:left;padding:0 20px;border-radius:12px;border:1.5px solid var(--dark-line);background:transparent;color:var(--on-dark);font:500 17px var(--sans);cursor:pointer;transition:border-color .15s,background .15s,transform .15s}
+.opt:hover{border-color:var(--on-dark);background:#26262A}
+.opt.sel{border-color:var(--on-dark);background:#2D2D31}
+.back{align-self:flex-start;background:none;border:0;color:var(--on-dark-muted);font:500 15px var(--sans);cursor:pointer;padding:6px 0;text-decoration:underline;text-underline-offset:4px}
+.back[disabled]{visibility:hidden}
+.res{display:flex;flex-direction:column;gap:20px}
+.score{display:flex;align-items:baseline;gap:14px}
+.score b{font:700 clamp(108px,12vw,160px)/0.9 var(--display)}
+.score span{font:500 20px var(--sans);color:var(--on-dark-muted)}
+.verdict{font:400 clamp(22px,2.2vw,28px)/1.35 var(--serif)}
+.gaps{display:flex;flex-direction:column;gap:12px;margin:0;padding:0;list-style:none}
+.gaps li{border-left:3px solid var(--on-dark);padding:2px 0 2px 16px}
+.gaps b{display:block;font:600 17px var(--sans)}
+.gaps span{display:block;font-size:15px;color:var(--on-dark-muted);margin-top:2px}
+.magnet{border-top:1px solid var(--dark-line);padding-top:20px;display:flex;flex-direction:column;gap:12px}
+.magnet label{font:600 16px var(--sans)}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.row input{flex:1 1 220px;min-height:52px;border-radius:12px;border:1.5px solid var(--dark-line);background:transparent;padding:0 16px;color:var(--on-dark)}
+.row input::placeholder{color:#7F8085}
+.magnet .ok{font-size:16px;color:var(--on-dark)}
+.linkbtn{background:none;border:0;color:var(--on-dark);text-decoration:underline;text-underline-offset:4px;font:600 16px var(--sans);cursor:pointer;padding:6px 0;align-self:flex-start}
+
+
+.opt.picked{background:var(--on-dark);color:var(--ink);border-color:var(--on-dark)}
+.testband .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px 40px}
+.testband h2{font-size:clamp(34px,4vw,52px);max-width:16em;margin-top:8px}
+.testband p{color:var(--on-dark-muted);margin-top:8px}
+.quizwrap{max-width:760px;margin:26px auto 0;padding-inline:max(20px,env(safe-area-inset-left,0px))}
+.quizwrap[hidden]{display:none}
+
+/* заявка и вопросы */
+.book .wrap{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:44px;align-items:start}
+.form{background:var(--card);border-radius:22px;padding:28px;box-shadow:0 12px 36px rgba(17,17,19,.1);display:flex;flex-direction:column;gap:14px;margin-top:20px}
+.f{display:flex;flex-direction:column;gap:6px;min-width:0}
+.f label{font:600 14px var(--sans)}
+.f input,.f select,.f textarea{min-height:48px;border-radius:12px;border:1.5px solid #B9BAC0;background:#fff;padding:10px 14px;width:100%;min-width:0}
+.f textarea{min-height:84px;resize:vertical}
+.f input:focus,.f select:focus,.f textarea:focus{border-color:var(--ink);outline:none;box-shadow:0 0 0 3px rgba(17,17,19,.14)}
+.f .err{font-size:13px;color:#A3231F}
+.f [aria-invalid="true"]{border-color:#A3231F}
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--muted)}
+.consent input{flex:none;width:20px;height:20px;margin-top:2px;accent-color:var(--ink)}
+.quiznote{font-size:14px;background:var(--cool);border-radius:10px;padding:9px 12px}
+.success{display:flex;flex-direction:column;gap:12px}
+.success h3{font-size:34px}
+.faq h2{font-size:clamp(34px,4vw,48px);margin-bottom:14px}
+.faq details{border-top:1px solid var(--ink)}
+.faq details:last-of-type{border-bottom:1px solid var(--ink)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:16px;align-items:center;padding:15px 0;font:600 16px/1.35 var(--sans)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font:500 26px/1 var(--sans);flex:none}
+.faq details[open] summary::after{content:"\2013"}
+.faq details p{padding:0 28px 15px 0;color:var(--muted);font-size:15px}
+
+footer{background:var(--dark);color:var(--on-dark-muted);padding-block:30px;font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 24px}
+footer .brand{color:var(--on-dark)}
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:55;background:rgba(243,243,240,.96);backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));display:none;align-items:center;justify-content:space-between;gap:12px}
+.sticky b{font:700 30px/1 var(--display)}
+.sticky .was{font-size:19px}
+.sticky .btn{min-height:46px;padding:0 20px;font-size:15px}
+
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.js .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.js .rv{opacity:1;transform:none;transition:none}}
+
+@media (max-width:960px){
+  .nav{display:none}
+  .hero{display:flex;flex-direction:column}
+  .hero-photo{position:static;order:2;height:auto;width:100%;margin-top:-16px}
+  .hero::after{display:none}
+  .hero-in{min-height:0;max-width:none;padding-block:36px 24px}
+  .proof .wrap{grid-template-columns:repeat(2,1fr)}
+  .pf:last-child{grid-column:1/-1}
+  .pains{grid-template-columns:1fr}
+  .get .wrap,.expert .grid,.book .wrap{grid-template-columns:minmax(0,1fr);gap:30px}
+  .pricecard{position:static}
+  .portrait{aspect-ratio:4/4}
+  .cases{grid-template-columns:minmax(0,1fr)}
+  .docs{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .sticky.on{display:flex}
+}
+@media (max-width:620px){
+  .dv-list,.two{grid-template-columns:minmax(0,1fr)}
+  .steps{grid-template-columns:repeat(2,1fr);gap:16px 14px}
+  .cta-row .btn{width:100%}
+}
+</style></head><body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top">Мария Мартыхина</a>
+    <nav class="nav" aria-label="Разделы"><a href="#expert">Эксперт</a><a href="#keisy">Кейсы</a><a href="#test">Тест</a><a href="#zapis">Заявка</a></nav>
+    <a class="btn" href="#zapis">Записаться</a>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <img class="hero-photo" src="../img/hero.png" alt="Мария Мартыхина выступает на трибуне">
+  <div class="wrap">
+    <div class="hero-in">
+      <p class="eyebrow">Стратегический разбор для компаний</p>
+      <h1>Выход на<br>рынок России</h1>
+      <p class="promise">За 90 минут подберём модель входа, разберём требования законодательства и составим план на&nbsp;90&nbsp;дней.</p>
+      <div class="cta-row">
+        <a class="btn" href="#zapis" id="heroCta">Записаться на разбор</a>
+        <div class="price"><s class="was">999&nbsp;$</s><b>389&nbsp;$</b><span>цена запуска</span></div>
+      </div>
+      <p class="trust"><b>ТОП-300</b> экспертов Pro Bono · <b>15+</b> выступлений · направление с нуля до <b>1 млрд ₽</b> в год</p>
+      <p class="note">Перед оплатой бесплатный созвон на 5–10 минут. Если разбор вам не подходит, скажем об этом сразу. <a class="tlink" href="#test">Пройти тест за 3 минуты</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="proof" aria-label="Опыт в цифрах">
+  <div class="wrap">
+    <div class="pf"><b>1 млрд ₽</b><span>ежегодный объём направления, запущенного с нуля</span></div>
+    <div class="pf"><b>4,4 трлн ₽</b><span>годовая выручка компаний-клиентов</span></div>
+    <div class="pf"><b>500+</b><span>интервью с собственниками бизнеса и топ-менеджерами</span></div>
+    <div class="pf"><b>15+</b><span>выступлений: Госдума, ПМЭФ, МТПП, «Сколково», ТВ</span></div>
+    <div class="pf"><b>ТОП-300</b><span>рейтинг экспертов PRO Bono</span></div>
+  </div>
+</section>
+
+<section class="sec" id="zaprosy">
+  <div class="wrap">
+    <p class="eyebrow">Знакомо?</p>
+    <h2 class="h2">С какими запросами приходят</h2>
+    <p class="lead">Для владельцев и руководителей компаний из Казахстана, ОАЭ, Армении и других стран: производителей, экспортёров и продавцов.</p>
+    <div class="pains">
+      <div class="pain rv"><h3>С чего начать выход на рынок России</h3><p>Своя компания, дистрибьютор или местный партнёр: что выгоднее, быстрее и безопаснее.</p></div>
+      <div class="pain rv"><h3>Будет ли мой продукт востребован</h3><p>Спрос, конкуренты, приемлемые цены и шанс занять свою долю рынка.</p></div>
+      <div class="pain rv"><h3>Нужны первые клиенты и крупные заказчики</h3><p>Где искать покупателей и как выйти на крупные компании и ЛПР.</p></div>
+      <div class="pain rv"><h3>Как работает маркетинг в России</h3><p>Какие каналы продвижения эффективны и во что вкладывать.</p></div>
+      <div class="pain rv"><h3>Нужны надёжные партнёры</h3><p>Где найти дистрибьюторов и поставщиков и как их проверить.</p></div>
+      <div class="pain rv"><h3>Сколько денег нужно и когда они окупятся</h3><p>Расходы, первые продажи и риски ещё до вложения средств.</p></div>
+      <div class="pain rv"><h3>Маркировка, сертификация и налоги</h3><p>Что закрыть заранее, чтобы не ошибиться на входе.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="get sec" id="razbor">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Разбор за 90 минут</p>
+      <h2 class="h2">Что вы получите</h2>
+      <div class="dv-list">
+        <article class="dv rv"><h3>Оценка рынка</h3><p>Есть ли спрос, кто конкуренты и какие цены приемлемы. На какой сегмент и регион заходить.</p></article>
+        <article class="dv rv"><h3>Модель входа</h3><p>Своя компания, дистрибьютор или местный партнёр, и почему именно эта схема.</p></article>
+        <article class="dv rv"><h3>Карта барьеров</h3><p>Юрформа, налоги и НДС, платежи, маркировка и сертификация, данные клиентов, товарный знак, реклама.</p></article>
+        <article class="dv rv"><h3>План на 90 дней</h3><p>Письменный план на 1–2 страницы: шаги, порядок и решения.</p></article>
+      </div>
+      <div class="steps">
+        <div class="st rv"><b>1</b><h3>Заявка</h3><p>2 минуты</p></div>
+        <div class="st rv"><b>2</b><h3>Созвон</h3><p>5–10 минут, бесплатно</p></div>
+        <div class="st rv"><b>3</b><h3>Оплата и анкета</h3><p>после созвона</p></div>
+        <div class="st rv"><b>4</b><h3>Встреча и план</h3><p>90 минут по видео</p></div>
+      </div>
+    </div>
+    <aside class="pricecard" aria-label="Стоимость">
+      <p class="tag">Цена запуска</p>
+      <div class="big"><s class="was">999&nbsp;$</s>389&nbsp;$</div>
+      <ul>
+        <li>Видеовстреча 90 минут с Марией</li>
+        <li>Короткая анкета до встречи</li>
+        <li>Письменный план на 1–2 страницы</li>
+        <li>Возможность продолжить сотрудничество по ведению бизнеса</li>
+      </ul>
+      <a class="btn light block" href="#zapis">Записаться на разбор</a>
+      <small>Сначала бесплатный созвон на 5–10 минут, оплата после него.</small>
+    </aside>
+  </div>
+</section>
+
+<section class="expert sec" id="expert">
+  <div class="wrap">
+    <div class="grid">
+      <div class="portrait rv"><img src="../img/speaker.jpg" alt="Мария Мартыхина на выступлении"></div>
+      <div class="who">
+        <p class="eyebrow">Кто проведёт разбор</p>
+        <h2>Мария Мартыхина</h2>
+        <p class="lead" style="color:var(--ink);margin-top:0">Стратегический эдвайзер, эксперт по международному развитию бизнеса. Более 7 лет в управлении, запуске новых направлений и международной экспансии.</p>
+        <ul class="facts">
+          <li><span><b>Управленческий опыт.</b> Руководство бизнесом с миллиардным коммерческим объёмом, развитие корпоративных партнёрств и прямые деловые связи с крупным бизнесом и государственными структурами.</span></li>
+          <li><span><b>Корпоративная экспертиза.</b> Стратегические исследования и разработка решений по выводу новых продуктов для МТС, РЖД и Минтранса на рынке России. Провела 60+ стратегических исследований.</span></li>
+          <li><span><b>Профессиональное признание.</b> Включена в рейтинг 300 лучших экспертов Pro Bono. Спикер федеральных и международных форумов.</span></li>
+          <li><span><b>Авторитет в научно-экспертной среде.</b> Юрист (МГЮА). Стратегический менеджмент (МГИМО). Председатель Экспертного совета ИД «Научная библиотека», член Научно-экспертного совета Ассоциации экспортного контроля России. Член Общественной палаты стран ЕАЭС. Автор научных публикаций в журналах перечня ВАК.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="keisy" style="padding-top:0">
+  <div class="wrap">
+    <p class="eyebrow">Кейсы</p>
+    <h2 class="h2">Результаты клиентов</h2>
+    <div class="cases">
+      <article class="case rv">
+        <p class="eyebrow">Выход на рынок России</p>
+        <h3>Международная сеть ресторанов (NDA)</h3>
+        <div class="figs"><div class="fig"><b>3 500+</b><span>точек у сети по миру</span></div><div class="fig"><b>1</b><span>первый ресторан бренда открылся в России</span></div></div>
+        <p class="cres"><b>Результат:</b> понятный план выхода на рынок и первый ресторан бренда в России.</p>
+        <details><summary>Было и что сделали</summary><dl>
+          <div><dt>Было</dt><dd>Хотели открыть первый ресторан в России, но не понимали, как устроен местный рынок, где искать клиентов и как продвигать бренд</dd></div>
+          <div><dt>Сделали</dt><dd>Изучили рынок и конкурентов, определили способы привлечения гостей, разработали стратегию продвижения и организовали работу подрядчиков</dd></div>
+        </dl></details>
+      </article>
+      <article class="case rv">
+        <p class="eyebrow">Новое направление</p>
+        <h3>Международная автомобильная компания (NDA)</h3>
+        <div class="figs"><div class="fig"><b>100+ млн ₽</b><span>в месяц: новое B2C-направление с нуля</span></div><div class="fig"><b>22</b><span>оптовых партнёра за 3 месяца</span></div><div class="fig"><b>X4</b><span>рост трафика</span></div><div class="fig"><b>70%+</b><span>клиентов из органики</span></div></div>
+        <p class="cres"><b>Результат:</b> полноценное B2C-направление с объёмом свыше 100 млн ₽ в месяц.</p>
+        <details><summary>Было и что сделали</summary><dl>
+          <div><dt>Было</dt><dd>Компания развивала международный автомобильный бизнес. Требовалось с нуля создать систему продаж частным клиентам и расширить сеть оптовых партнёров</dd></div>
+          <div><dt>Сделали</dt><dd>Сформировали коммерческую команду, выстроили продажи, маркетинг и клиентское сопровождение, протестировали более 25 каналов привлечения клиентов и усилили B2B-партнёрства</dd></div>
+        </dl></details>
+      </article>
+      <article class="case rv">
+        <p class="eyebrow">Новые клиенты</p>
+        <h3>Международная логистическая компания</h3>
+        <div class="figs"><div class="fig"><b>8</b><span>запросов на международную доставку</span></div><div class="fig"><b>30+</b><span>руководителей заинтересовались сотрудничеством</span></div><div class="fig"><b>0 ₽</b><span>на рекламу за 1 месяц</span></div></div>
+        <p class="cres"><b>Результат:</b> выход на якорных заказчиков в России за 1 месяц.</p>
+        <details><summary>Было и что сделали</summary><dl>
+          <div><dt>Было</dt><dd>Полное непонимание, как продвигаться на российском рынке и находить новых клиентов. Хотели привлечь крупных постоянных заказчиков и наладить деловые связи</dd></div>
+          <div><dt>Сделали</dt><dd>За месяц представили компанию на 2 отраслевых выставках, установили контакты с 4 отраслевыми государственными ассоциациями, протестировали более 5 способов поиска клиентов без рекламного бюджета, организовали встречи с руководителями потенциальных заказчиков</dd></div>
+        </dl></details>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="dokumenty" style="padding-top:0">
+  <div class="wrap">
+    <p class="eyebrow">Благодарности клиентов</p>
+    <p class="lead" style="margin-top:8px">Нажмите на документ, чтобы открыть его крупно.</p>
+    <div class="docs">
+      <button class="doc rv" type="button" data-src="../img/doc-netcars.jpg" data-alt="Благодарственное письмо клиента"><span class="thumb"><img src="../img/doc-netcars.jpg" alt="" loading="lazy"></span></button>
+      <button class="doc rv" type="button" data-src="../img/doc-vozhdenium.jpg" data-alt="Благодарность онлайн-школы"><span class="thumb"><img src="../img/doc-vozhdenium.jpg" alt="" loading="lazy"></span></button>
+      <button class="doc rv" type="button" data-src="../img/doc-motus-vita.jpg" data-alt="Благодарность за стратегическое сопровождение"><span class="thumb"><img src="../img/doc-motus-vita.jpg" alt="" loading="lazy"></span></button>
+      <button class="doc rv" type="button" data-src="../img/doc-eurasia.jpg" data-alt="Благодарность Евразийского движения"><span class="thumb"><img src="../img/doc-eurasia.jpg" alt="" loading="lazy"></span></button>
+      <button class="doc rv" type="button" data-src="../img/doc-chernico.jpg" data-alt="Благодарность мебельной фабрики"><span class="thumb"><img src="../img/doc-chernico.jpg" alt="" loading="lazy"></span></button>
+    </div>
+  </div>
+</section>
+
+<section class="testband dark sec" id="test">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Бесплатный тест</p>
+      <h2>Готов ли ваш бизнес к выходу в Россию?</h2>
+      <p>12 вопросов, около 3 минут. Результат сразу на экране, чек-лист «Карта барьеров» можно получить в Telegram или на почту.</p>
+    </div>
+    <button class="btn light" type="button" id="testGo">Пройти тест</button>
+  </div>
+  <div class="quizwrap" id="quizwrap" hidden><div class="quiz" id="quiz" aria-live="polite"></div></div>
+</section>
+
+<section class="book sec" id="zapis">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Запись на разбор</p>
+      <h2 class="h2">Оставьте заявку</h2>
+      <p class="lead">Свяжемся в течение часа и договоримся о коротком бесплатном созвоне на 5–10 минут.</p>
+      <form class="form" id="bookForm" novalidate>
+        <div id="quizNote" class="quiznote" hidden></div>
+        <div class="two">
+          <div class="f"><label for="fName">Имя</label><input id="fName" name="name" autocomplete="name" placeholder="Как к вам обращаться"><div class="err" id="eName" role="alert"></div></div>
+          <div class="f"><label for="fContact">Telegram или телефон</label><input id="fContact" name="contact" autocomplete="tel" placeholder="@username или +7…"><div class="err" id="eContact" role="alert"></div></div>
+        </div>
+        <div class="f"><label for="fCountry">Страна вашего бизнеса</label>
+          <select id="fCountry" name="country"><option value="">Выберите страну</option><option>Казахстан</option><option>ОАЭ</option><option>Армения</option><option>Кыргызстан</option><option>Узбекистан</option><option>Турция</option><option>Китай</option><option>Другая страна</option></select><div class="err" id="eCountry" role="alert"></div></div>
+        <div class="f"><label for="fBiz">Чем занимается бизнес и что хотите продавать в России</label><textarea id="fBiz" name="biz" placeholder="Например: производство одежды, 40 человек; хочу продавать через дистрибьюторов"></textarea><div class="err" id="eBiz" role="alert"></div></div>
+        <label class="consent"><input type="checkbox" id="fOk"><span>Понимаю, что разбор платный: <s class="was">999&nbsp;$</s>389&nbsp;$. Сначала короткий созвон, оплата после него.</span></label>
+        <div class="err" id="eOk" role="alert" style="font-size:13px;color:#A3231F"></div>
+        <button class="btn block" type="submit">Отправить заявку</button>
+      </form>
+      <div class="form success" id="bookOk" hidden></div>
+    </div>
+    <div class="faq" id="faq">
+      <h2>Частые вопросы</h2>
+      <details><summary>Чем разбор отличается от консультации юриста?</summary><p>Разбор отвечает на вопрос «как и с чего входить»: модель, барьеры, порядок шагов и цифры. Регистрацию компании и документы делает юрист. Мы покажем, какие вопросы ему поставить.</p></details>
+      <details><summary>Что нужно подготовить к встрече?</summary><p>Заполнить короткую анкету: чем вы торгуете, цены, страны и каналы продаж, бюджет на выход, что уже сделано.</p></details>
+      <details><summary>Как оплатить из Казахстана, ОАЭ или другой страны?</summary><p>Способ оплаты обсудим на коротком созвоне, он зависит от вашей страны. Сначала проверим, что разбор вам нужен.</p></details>
+      <details><summary>Вы гарантируете результат?</summary><p>Нет. Мы показываем реальность рынка, риски и порядок шагов. Результат зависит от продукта, цены и того, как вы выполните план.</p></details>
+      <details><summary>Что будет после разбора?</summary><p>Вы получите письменный план и можете выполнять его сами. Если захотите, мы продолжим сотрудничество по ведению бизнеса в России: будем сопровождать шаги из плана. Формат и условия обсудим отдельно после встречи.</p></details>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="#top">Мария Мартыхина</a>
+    <p>martykhina.ru · info@martykhina.ru · +7 927 195-32-63</p>
+  </div>
+</footer>
+
+<div class="sticky" id="sticky"><b><s class="was">999&nbsp;$</s>389&nbsp;$</b><a class="btn" href="#zapis">Записаться на разбор</a></div>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Документ">
+  <button class="lb-x" type="button" id="lbX" aria-label="Закрыть">×</button>
+  <img id="lbImg" alt="">
+</div>
+
+<script>
+(function(){
+var Q=[
+    {z:'Модель входа',q:'Вы выбрали модель входа: своё юрлицо, дистрибьютор, представительство или франшиза?',tip:'Сравните модели по деньгам, срокам и контролю. От выбора зависят налоги, документы и партнёры.'},
+    {z:'Налоги и НДС',q:'Вы понимаете, какие налоги и НДС заплатите при продажах в России?',tip:'Набор налогов зависит от модели входа: юрлицо, представительство или поставки через дистрибьютора. Посчитайте их в цене до запуска и проверьте у налогового консультанта.'},
+    {z:'Платежи',q:'У вас есть основной и запасной маршрут расчётов с российскими партнёрами?',tip:'Банки усилили проверки, переводы могут задерживаться. Заложите запасной маршрут и сроки платежей в договор.'},
+    {z:'Маркировка',q:'Вы проверили, нужна ли вашему товару обязательная маркировка и кто будет её оператором?',tip:'Иностранный бизнес не всегда может зарегистрироваться в системе «Честный знак» напрямую, часто нужен российский импортёр или партнёр.'},
+    {z:'Сертификация',q:'Есть ли документы соответствия на ваши товары для рынка ЕАЭС: сертификат или декларация?',tip:'Без них возможны проблемы с ввозом и продажей товара. Уточните список документов для вашей товарной группы.'},
+    {z:'Данные клиентов',q:'Если вы собираете данные граждан России (сайт, CRM, рассылки), они хранятся на серверах в России?',tip:'С 2025 года требования к локализации данных ужесточились, а штрафы выросли. Проверьте сайт, CRM и подрядчиков.'},
+    {z:'Товарный знак',q:'Ваш бренд зарегистрирован в Роспатенте и используется в России?',tip:'Без регистрации бренд могут занять другие, а знак, который три года не используют, может потерять охрану.'},
+    {z:'Маржа',q:'Вы посчитали маржу после логистики, пошлин и налогов?',tip:'Логистика, пошлины и налоги заметно влияют на цену. Посчитайте экономику одной единицы товара до запуска.'},
+    {z:'Каналы продаж',q:'Определены каналы продаж и первые 3 клиента или партнёра?',tip:'Первые договорённости делают вход предсказуемым. Начните с одного канала и проверьте его.'},
+    {z:'Партнёры',q:'Вы знаете, как проверять российских дистрибьюторов и партнёров?',tip:'Проверьте юрлицо, долги, суды и репутацию. Договор должен защищать вас при споре.'},
+    {z:'Язык и реклама',q:'Упаковка, договоры и реклама подготовлены на русском с учётом местных правил, включая маркировку рекламы?',tip:'В России рекламу нужно маркировать, а информация о товаре на упаковке должна быть на русском.'},
+    {z:'Бюджет и срок',q:'Определены бюджет входа и срок до первых продаж?',tip:'Назовите сумму, которую готовы потратить на проверку, и дату, когда примете решение.'}
+  ];
+  var box=document.getElementById('quiz'),i=0,ans=[];
+  var lock=false,noMotion=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  window.quizResult=null;
+
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+
+  function showQ(){
+    var q=Q[i];
+    box.innerHTML=
+      '<div class="qtop"><span>Вопрос '+(i+1)+' из '+Q.length+'</span><span>Тест готовности</span></div>'+
+      '<div class="bar"><i style="width:'+((i)/Q.length*100)+'%"></i></div>'+
+      '<div class="qzone">'+esc(q.z)+'</div>'+
+      '<div class="qtext">'+esc(q.q)+'</div>'+
+      '<div class="opts">'+
+        ['yes:Да','no:Нет','unk:Пока не знаю'].map(function(o){var p=o.split(':');return '<button type="button" class="opt'+(ans[i]===p[0]?' sel':'')+'" data-v="'+p[0]+'">'+p[1]+'</button>'}).join('')+
+      '</div>'+
+      '<button type="button" class="back" id="qBack"'+(i===0?' disabled':'')+'>← Назад</button>';
+    var bar=box.querySelector('.bar i');
+    requestAnimationFrame(function(){bar.style.width=((i+0.0)/Q.length*100)+'%'});
+    lock=false;
+    box.querySelectorAll('.opt').forEach(function(b){b.addEventListener('click',function(){
+      if(lock)return;lock=true;
+      ans[i]=b.getAttribute('data-v');
+      b.classList.add('picked');
+      setTimeout(function(){if(i<Q.length-1){i++;showQ()}else{showRes()}},noMotion?0:240);
+    })});
+    document.getElementById('qBack').addEventListener('click',function(){if(lock)return;if(i>0){i--;showQ()}});
+  }
+
+  function showRes(){
+    var score=ans.filter(function(a){return a==='yes'}).length;
+    var gaps=[];Q.forEach(function(q,k){if(ans[k]!=='yes')gaps.push(q)});
+    var verdict=score<=4?'Рано вкладывать деньги. Сначала закройте базовые вопросы, иначе вход обойдётся дороже, чем кажется.':
+                score<=8?'Основа есть, осталось закрыть несколько зон до запуска.':
+                'Вы близки к запуску. Проверьте детали и оставшиеся пробелы, чтобы не потерять время на мелочах.';
+    window.quizResult={score:score,total:Q.length};
+    var top=gaps.slice(0,5);
+    box.innerHTML=
+      '<div class="res">'+
+        '<div class="qtop"><span>Результат теста</span><span>готовность к выходу</span></div>'+
+        '<div class="score"><b>'+score+'</b><span>из '+Q.length+'</span></div>'+
+        '<p class="verdict">'+esc(verdict)+'</p>'+
+        (top.length?'<div><div class="qzone" style="margin-bottom:12px">Что закрыть в первую очередь</div><ul class="gaps">'+top.map(function(g){return '<li><b>'+esc(g.z)+'</b><span>'+esc(g.tip)+'</span></li>'}).join('')+'</ul>'+(gaps.length>5?'<p style="margin-top:12px;font-size:15px;color:var(--on-dark-muted)">И ещё '+(gaps.length-5)+' зон в полном чек-листе.</p>':'')+'</div>':'<p style="color:var(--on-dark-muted)">Все двенадцать зон закрыты. На разборе проверим детали и порядок шагов.</p>')+
+        '<div class="magnet" id="magnet">'+
+          '<label for="mContact">Получить чек-лист «Карта барьеров» с советами по всем 12 зонам</label>'+
+          '<div class="row"><input id="mContact" placeholder="Telegram или e-mail" autocomplete="email"><button type="button" class="btn light" id="mSend">Получить чек-лист</button></div>'+
+          '<div id="mOk" class="ok" role="status"></div>'+
+        '</div>'+
+        '<a class="btn light block" href="#zapis" id="toBook">Разобрать мои пробелы за 90 минут</a>'+
+        '<button type="button" class="linkbtn" id="redo">Пройти тест заново</button>'+
+      '</div>';
+    document.getElementById('mSend').addEventListener('click',function(){
+      var v=document.getElementById('mContact').value.trim();
+      var ok=document.getElementById('mOk');
+      if(v.length<4){ok.textContent='Укажите Telegram или e-mail.';return}
+      ok.textContent='Готово. В рабочей версии чек-лист придёт на '+v+'.';
+    });
+    document.getElementById('redo').addEventListener('click',function(){i=0;ans=[];window.quizResult=null;noteBook();showQ()});
+    document.getElementById('toBook').addEventListener('click',noteBook);
+    noteBook();
+  }
+
+  function noteBook(){
+    var n=document.getElementById('quizNote');
+    if(window.quizResult){n.hidden=false;n.textContent='К заявке приложен результат теста: '+window.quizResult.score+' из '+window.quizResult.total+'.'}
+    else{n.hidden=true;n.textContent=''}
+  }
+  showQ();
+
+  /* тест открывается по кнопке */
+  var qw=document.getElementById('quizwrap');
+  document.getElementById('testGo').addEventListener('click',function(){
+    qw.hidden=false;this.hidden=true;qw.scrollIntoView({block:'center',behavior:'smooth'});
+  });
+
+  /* форма записи */
+  var form=document.getElementById('bookForm'),okBox=document.getElementById('bookOk');
+  function setErr(id,msg,field){document.getElementById(id).textContent=msg||'';if(field){if(msg)field.setAttribute('aria-invalid','true');else field.removeAttribute('aria-invalid')}}
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var f={name:document.getElementById('fName'),contact:document.getElementById('fContact'),country:document.getElementById('fCountry'),biz:document.getElementById('fBiz'),ok:document.getElementById('fOk')},bad=false,first=null;
+    function chk(id,fld,cond,msg){if(!cond){setErr(id,msg,fld);bad=true;if(!first)first=fld}else setErr(id,'',fld)}
+    chk('eName',f.name,f.name.value.trim().length>1,'Введите имя.');
+    chk('eContact',f.contact,f.contact.value.trim().length>3,'Укажите Telegram или телефон, чтобы мы могли связаться.');
+    chk('eCountry',f.country,!!f.country.value,'Выберите страну.');
+    chk('eBiz',f.biz,f.biz.value.trim().length>2,'Коротко опишите бизнес.');
+    chk('eOk',f.ok,f.ok.checked,'Подтвердите, что разбор платный.');
+    if(bad){first.focus();return}
+    form.hidden=true;okBox.hidden=false;
+    okBox.innerHTML='<h3>Заявка принята</h3><p>В рабочей версии мы свяжемся с вами в течение часа. Сейчас это черновик: данные никуда не отправляются.</p>';
+  });
+
+  /* документы */
+  var lb=document.getElementById('lb'),lbImg=document.getElementById('lbImg'),lastDoc=null;
+  document.querySelectorAll('.doc').forEach(function(b){b.addEventListener('click',function(){
+    lastDoc=b;lbImg.src=b.getAttribute('data-src');lbImg.alt=b.getAttribute('data-alt')||'';lb.hidden=false;document.getElementById('lbX').focus();
+  })});
+  function closeLb(){lb.hidden=true;lbImg.removeAttribute('src');if(lastDoc)lastDoc.focus()}
+  document.getElementById('lbX').addEventListener('click',closeLb);
+  lb.addEventListener('click',function(e){if(e.target===lb)closeLb()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!lb.hidden)closeLb()});
+
+  /* нижняя кнопка на телефоне */
+  var st=document.getElementById('sticky'),zap=document.getElementById('zapis'),hero=document.getElementById('heroCta');
+  function upd(){
+    var hb=hero.getBoundingClientRect().bottom,zr=zap.getBoundingClientRect();
+    st.classList.toggle('on',hb<0&&!(zr.top<window.innerHeight*0.6&&zr.bottom>0));
+  }
+  window.addEventListener('scroll',upd,{passive:true});window.addEventListener('resize',upd);upd();
+
+  /* появление блоков при прокрутке */
+  var rv=[].slice.call(document.querySelectorAll('.rv'));
+  function reveal(){
+    var vh=window.innerHeight||800;
+    rv=rv.filter(function(el){var r=el.getBoundingClientRect();if(r.top<vh*0.94){el.classList.add('in');return false}return true});
+  }
+  window.addEventListener('scroll',reveal,{passive:true});window.addEventListener('resize',reveal);
+  reveal();setTimeout(reveal,250);
+})();
+</script>
+</body></html>
